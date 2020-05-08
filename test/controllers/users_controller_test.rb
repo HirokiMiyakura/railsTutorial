@@ -11,7 +11,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get users_path
     assert_redirected_to login_url
   end
-
+  
   test "should get new" do
     get signup_path
     assert_response :success
@@ -46,7 +46,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     log_in_as(@other_user)
     assert_no_difference 'User.count' do
       delete user_path(@user)  
-    end
+    endguarded-cliffs-23361
     assert_redirected_to root_url
   end
 end
